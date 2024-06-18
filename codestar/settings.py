@@ -34,6 +34,10 @@ ALLOWED_HOSTS = [
     '.herokuapp.com',
 ]
 
+#CSRF_TRUSTED_ORIGINS = [
+#    "https://*.8000-yourlink",
+#    "https://*.herokuapp.com"
+#]
 
 # Application definition
 
@@ -92,6 +96,9 @@ DATABASES = {
     'default':
     dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+SECRET_KEY = os.environ.get("MY_SECRET_KEY")
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
